@@ -15,9 +15,7 @@ function renderNews(data){
         } else {
             console.log('column Three');
             columnThree = columnThree + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
-        }
-        
-        // content = content + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+        };
     };
     
     $('#columnOne').html(columnOne);
