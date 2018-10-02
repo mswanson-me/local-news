@@ -12,8 +12,14 @@ a {
     text-decoration: none;
 }
 
-section {
-    
+p {
+    display: inline;
+}
+
+img {
+    height: 100px;
+    width: auto;
+    display: inline;
 }
 
 article {

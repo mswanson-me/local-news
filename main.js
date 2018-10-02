@@ -1,11 +1,11 @@
-let latlng = '46.19351100000001,-123.77970750000001';
+// let latlng = '46.19351100000001,-123.77970750000001';
 let zipCode;
 
 function renderNews(data){
     let content = '';
     
     for (let j = 0; j < data.articles.length; j++){
-        content = content + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p></article></a>`;
+        content = content + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
     };
     
     $('#news').html(content);
