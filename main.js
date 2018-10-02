@@ -1,14 +1,28 @@
-// let latlng = '46.19351100000001,-123.77970750000001';
 let zipCode;
 
 function renderNews(data){
-    let content = '';
-    
+    let columnOne = '';
+    let columnTwo = '';
+    let columnThree = '';
+
     for (let j = 0; j < data.articles.length; j++){
-        content = content + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+        if (j == 0 || j % 3 == 0){
+            console.log('column one');
+            columnOne = columnOne + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+        } else if (j == 1 || j % 3 == 1){
+            console.log('column Two');
+            columnTwo = columnTwo + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+        } else {
+            console.log('column Three');
+            columnThree = columnThree + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+        }
+        
+        // content = content + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
     };
     
-    $('#news').html(content);
+    $('#columnOne').html(columnOne);
+    $('#columnTwo').html(columnTwo);
+    $('#columnThree').html(columnThree);
 }
 
 function getNews(zip, callback){
