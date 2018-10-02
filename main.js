@@ -2,10 +2,10 @@ let latlng = '46.19351100000001,-123.77970750000001';
 let zipCode;
 
 function renderNews(data){
-    let content;
-
+    let content = '';
+    
     for (let j = 0; j < data.articles.length; j++){
-        content = content + `<article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p></article>`;
+        content = content + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p></article></a>`;
     };
     
     $('#news').html(content);
@@ -19,6 +19,7 @@ function getNews(zip, callback){
         data: {
             q: zip,
             sortBy: 'publishedAt',
+            language: 'en',
             apiKey: NEWS_API,
         },
         success: callback,
