@@ -1,4 +1,4 @@
-let zipCode = 'headlines';
+let searchTerm = 'headlines';
 
 function renderNews(data){
     let columnOne = '';
@@ -17,20 +17,20 @@ function renderNews(data){
         };
     };
     
-    $('#searchResults').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${zipCode}".`);
+    $('#searchResults').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${searchTerm}".`);
 
     $('#columnOne').html(columnOne);
     $('#columnTwo').html(columnTwo);
     $('#columnThree').html(columnThree);
 }
 
-function getNews(zip, callback){
+function getNews(query, callback){
     const settings = {
         url: 'https://newsapi.org/v2/everything',
         dataType: 'json',
         type: 'GET',
         data: {
-            q: zip,
+            q: query,
             sortBy: 'publishedAt',
             language: 'en',
             apiKey: NEWS_API,
@@ -44,11 +44,11 @@ function getNews(zip, callback){
 function getZip(data){
     for (let i = 0; i < data.results.length; i++){
         if (data.results[i].types[0] == 'administrative_area_level_1'){
-            zipCode = data.results[i].formatted_address;
+            searchTerm = data.results[i].formatted_address;
         };
     };
 
-    getNews(zipCode, renderNews);
+    getNews(searchTerm, renderNews);
 }
 
 function geoCode(latlng, callback){
