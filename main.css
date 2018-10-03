@@ -7,6 +7,34 @@ body {
     margin: auto;
 }
 
+header {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+legend {
+    font-size: 48px;
+}
+
+input {
+    width: 40%;
+    height: 36px;
+    margin: auto;
+    padding: 8px;
+}
+
+button {
+    height: 36px;
+}
+
+#news {
+    margin-top: 220px;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -17,19 +45,18 @@ p {
 }
 
 img {
-    height: 100px;
-    width: auto;
+    height: auto;
+    width: 100%;
     display: inline;
+    margin-top: 5px;
 }
 
 article {
     border: 1px solid black;
-    box-shadow: 3px 3px black;
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 10px;
 }
 
-article:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px black;
+article:hover, article:focus {
+    transform: scale(1.03);
 }

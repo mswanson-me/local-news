@@ -12,7 +12,13 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <h1 class="row">Local News</h1>
+    <header role="banner">
+        <form class="newsSearch">          
+            <legend>News Search</legend>
+            <input autofocus class="searchField" type="text" placeholder="person, place, event, topic...">
+            <button type="submit" class="searchField add-item-btn">Add</button>
+        </form>
+    </header>
     <section id="news" class="row">
         <div class="col-4" id="columnOne"></div>
         <div class="col-4" id="columnTwo"></div>

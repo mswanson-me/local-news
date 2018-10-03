@@ -1,4 +1,4 @@
-let zipCode;
+let zipCode = 'headlines';
 
 function renderNews(data){
     let columnOne = '';
