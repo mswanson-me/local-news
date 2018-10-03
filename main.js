@@ -5,19 +5,20 @@ function renderNews(data){
     let columnTwo = '';
     let columnThree = '';
 
+    console.log(data);
+
     for (let j = 0; j < data.articles.length; j++){
         if (j == 0 || j % 3 == 0){
-            console.log('column one');
             columnOne = columnOne + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         } else if (j == 1 || j % 3 == 1){
-            console.log('column Two');
             columnTwo = columnTwo + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         } else {
-            console.log('column Three');
             columnThree = columnThree + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         };
     };
     
+    $('#searchResults').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${zipCode}".`);
+
     $('#columnOne').html(columnOne);
     $('#columnTwo').html(columnTwo);
     $('#columnThree').html(columnThree);
