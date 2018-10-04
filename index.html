@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>News Aggregator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="grid.css" />
@@ -14,12 +14,12 @@
 </head>
 <body>
     <header role="banner">
-        <form class="newsSearch">          
+        <form id="search-form" action='#'>          
             <legend>News Search</legend>
-            <input autofocus class="searchField" type="text" placeholder="person, place, event, topic...">
-            <button type="submit" class="searchField">Search</button>
+            <input autofocus id="search-field" type="text" placeholder="person, place, event, topic...">
+            <button type="submit">Search</button>
         </form>
-        <p id="searchResults"></p>
+        <p id="search-results"></p>
     </header>
     <section id="news" class="row">
         <div class="col-4" id="columnOne"></div>

@@ -1,4 +1,4 @@
-let searchTerm = 'headlines';
+let searchTerm = '';
 
 function renderNews(data){
     let columnOne = '';
@@ -17,7 +17,7 @@ function renderNews(data){
         };
     };
     
-    $('#searchResults').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${searchTerm}".`);
+    $('#search-results').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${searchTerm}".`);
 
     $('#columnOne').html(columnOne);
     $('#columnTwo').html(columnTwo);
@@ -43,7 +43,7 @@ function getNews(query, callback){
 
 function getZip(data){
     for (let i = 0; i < data.results.length; i++){
-        if (data.results[i].types[0] == 'administrative_area_level_1'){
+        if (data.results[i].types[0] == 'postal_code'){
             searchTerm = data.results[i].formatted_address;
         };
     };
@@ -73,4 +73,19 @@ function geoLocate(){
     });
 }
 
-$(geoLocate());
+function initListener(){
+    $('#search-form').submit(event => {
+        event.preventDefault();
+        console.log('submitting');
+        const query = $(event.currentTarget).find('#search-field').val();
+        $(event.currentTarget).find('#search-field').val('');
+        getNews(query, renderNews);
+    });
+}
+
+function initPage(){
+    initListener();
+    // geoLocate();
+}
+
+$(initPage());
