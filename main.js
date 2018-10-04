@@ -74,18 +74,18 @@ function geoLocate(){
 }
 
 function initListener(){
-    $('#search-form').submit(event => {
+    $('.search-form').submit(event => {
         event.preventDefault();
         console.log('submitting');
-        const query = $(event.currentTarget).find('#search-field').val();
-        $(event.currentTarget).find('#search-field').val('');
+        const query = $(event.currentTarget).find('.search-field').val();
+        $(event.currentTarget).find('.search-field').val('');
         getNews(query, renderNews);
     });
 }
 
 function initPage(){
     initListener();
-    // geoLocate();
+    geoLocate();
 }
 
 $(initPage());
