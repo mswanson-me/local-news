@@ -9,11 +9,11 @@ function renderNews(data){
 
     for (let j = 0; j < data.articles.length; j++){
         if (j == 0 || j % 3 == 0){
-            columnOne = columnOne + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+            columnOne = columnOne + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><h3>${data.articles[j].source.name}</h3><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         } else if (j == 1 || j % 3 == 1){
-            columnTwo = columnTwo + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+            columnTwo = columnTwo + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><h3>${data.articles[j].source.name}</h3><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         } else {
-            columnThree = columnThree + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
+            columnThree = columnThree + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><h3>${data.articles[j].source.name}</h3><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         };
     };
     
@@ -31,7 +31,7 @@ function getNews(query, callback){
         type: 'GET',
         data: {
             q: query,
-            sortBy: 'publishedAt',
+            sortBy: 'relevancy',
             language: 'en',
             apiKey: NEWS_API,
         },
@@ -77,15 +77,12 @@ function initListener(){
     $('.search-form').submit(event => {
         event.preventDefault();
         console.log('submitting');
-        const query = $(event.currentTarget).find('.search-field').val();
-        $(event.currentTarget).find('.search-field').val('');
-        getNews(query, renderNews);
+        const queryTarget = $(event.currentTarget).find('.search-field');
+        searchTerm = queryTarget.val();
+        console.log(searchTerm);
+        queryTarget.val('');
+        getNews(searchTerm, renderNews);
     });
 }
 
-function initPage(){
-    initListener();
-    geoLocate();
-}
-
-$(initPage());
+$(initListener);
