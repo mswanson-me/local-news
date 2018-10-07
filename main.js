@@ -5,8 +5,6 @@ function renderNews(data){
     let columnTwo = '';
     let columnThree = '';
 
-    console.log(data);
-
     for (let j = 0; j < data.articles.length; j++){
         if (j == 0 || j % 3 == 0){
             columnOne = columnOne + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><h3>${data.articles[j].source.name}</h3><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
@@ -76,10 +74,8 @@ function geoLocate(){
 function initListener(){
     $('.search-form').submit(event => {
         event.preventDefault();
-        console.log('submitting');
         const queryTarget = $(event.currentTarget).find('.search-field');
         searchTerm = queryTarget.val();
-        console.log(searchTerm);
         queryTarget.val('');
         getNews(searchTerm, renderNews);
     });
