@@ -67,3 +67,7 @@ article {
 article:hover, article:focus {
     transform: scale(1.03);
 }
+
+form p a {
+    color: blue;
+}
