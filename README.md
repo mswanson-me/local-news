@@ -1,1 +1,1 @@
-# Local News Aggregator App
+# News Aggregator App
