@@ -54,7 +54,7 @@ p {
 img {
     height: auto;
     width: 100%;
-    display: inline;
+    /* display: inline; */
     margin-top: 5px;
 }
 
@@ -64,6 +64,10 @@ article {
     padding: 10px;
 }
 
-article:hover, article:focus {
+article:hover, article:focus, a:focus {
     transform: scale(1.03);
+}
+
+form p a {
+    color: blue;
 }

@@ -14,7 +14,7 @@ function renderNews(data){
             columnThree = columnThree + `<a href="${data.articles[j].url}" target='blank'><article><h2>${data.articles[j].title}</h2><h3>${data.articles[j].source.name}</h3><p>${data.articles[j].description}</p><img src="${data.articles[j].urlToImage}"></article></a>`;
         };
     };
-    
+
     $('#search-results').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${searchTerm}".`);
 
     $('#columnOne').html(columnOne);

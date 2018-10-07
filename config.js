@@ -1,2 +1,2 @@
-const NEWS_API = 'bb7c3911e9c64024b7ed59f465880a75';
-const GEO_API = 'AIzaSyALlfx7DuHfigjyO-5VcNZMAKXrQUqKiKs';
+const NEWS_API = 'dd003cbcf37d4a75a6d0c23368fe1e30';
+const GEO_API = 'AIzaSyCEqdXbokNTqZOiig7okd_oEe1rQZPTkCI';
