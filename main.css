@@ -27,7 +27,7 @@ legend {
 }
 
 input {
-    width: 70%;
+    width: 60%;
     height: 36px;
     margin: 10px auto;
     padding: 8px;
@@ -55,8 +55,8 @@ a {
 
 p {
     display: inline;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    /* margin-top: 5px; */
+    /* margin-bottom: 5px; */
     line-height: 1.1em;
 }
 
@@ -64,7 +64,7 @@ img {
     height: auto;
     width: 100%;
     display: inline;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 article {

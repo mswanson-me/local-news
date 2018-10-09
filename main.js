@@ -19,7 +19,11 @@ function renderNews(data){
         };
     };
     
-    $('#search-results').html(`Showing top ${data.articles.length} results for search term "${searchTerm}".`);
+    if (data.articles.length == 0){
+        $('#search-results').html(`No results for "${searchTerm}". Check your spelling and try again!`);        
+    } else {
+        $('#search-results').html(`Showing top ${data.articles.length} results for search term "${searchTerm}".`);
+    };
 
     $('#columnOne').html(columnOne);
     $('#columnTwo').html(columnTwo);
