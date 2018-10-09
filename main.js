@@ -19,7 +19,7 @@ function renderNews(data){
         };
     };
     
-    $('#search-results').html(`Showing ${data.articles.length} out of ${data.totalResults} results for search term "${searchTerm}".`);
+    $('#search-results').html(`Showing top ${data.articles.length} results for search term "${searchTerm}".`);
 
     $('#columnOne').html(columnOne);
     $('#columnTwo').html(columnTwo);
