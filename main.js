@@ -1,7 +1,11 @@
 'use strict';
 
+// searchTerm is declared globally
 let searchTerm = '';
 
+// renderNews reads each article that News API returns,
+// makes three columns and fills them with articles evenly,
+// and renders the article content to the page
 function renderNews(data){
     let columnOne = '';
     let columnTwo = '';
@@ -30,6 +34,7 @@ function renderNews(data){
     $('#columnThree').html(columnThree);
 }
 
+// getNews passes the search term to the News API and retrieves results
 function getNews(query, callback){
     const settings = {
         url: 'https://newsapi.org/v2/everything',
@@ -47,38 +52,7 @@ function getNews(query, callback){
     $.ajax(settings);
 }
 
-function getZip(data){
-    for (let i = 0; i < data.results.length; i++){
-        if (data.results[i].types[0] == 'postal_code'){
-            searchTerm = data.results[i].formatted_address;
-        };
-    };
-
-    getNews(searchTerm, renderNews);
-}
-
-function geoCode(latlng, callback){
-    const settings = {
-        url: 'https://maps.googleapis.com/maps/api/geocode/json',
-        dataType: 'json',
-        type: 'GET',
-        data: {
-            latlng: latlng,
-            key: GEO_API,
-        },
-        success: callback,
-    };
-
-    $.ajax(settings);
-}
-
-function geoLocate(){
-    navigator.geolocation.getCurrentPosition(function(position) {
-        latlng = `${position.coords.latitude},${position.coords.longitude}`;
-        geoCode(latlng, getZip);
-    });
-}
-
+// initListener sets the event listener to handle search form submissions
 function initListener(){
     $('.search-form').submit(event => {
         event.preventDefault();
