@@ -17,8 +17,13 @@ header {
     font-family: 'Lato', sans-serif;
 }
 
+fieldset {
+    border: none;
+}
+
 legend {
     font-size: 48px;
+    margin: auto;
 }
 
 input {
@@ -83,5 +88,9 @@ form p a {
 
     input {
         width: 40%;
+    }
+
+    #news {
+        margin-top: 280px;
     }
 }

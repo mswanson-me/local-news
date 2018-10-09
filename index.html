@@ -14,12 +14,16 @@
 </head>
 <body>
     <header role="banner">
-        <form class="search-form">          
-            <legend>News Search</legend>
-            <p>Find news on any topic from over 30,000 sources. Powered by <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a><br>
-            <a href="https://github.com/mswanson-me/news-aggregator" target="_blank">Click here to see the GitHub repo!</a><br></p>
-            <input autofocus class="search-field" type="text" placeholder="person, place, event, topic...">
-            <button type="submit">Search</button>
+        <form class="search-form">
+            <fieldset>
+                <legend>News Search</legend>
+                <p>Find news on any topic from over 30,000 sources. Powered by <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a><br>
+                <a href="https://github.com/mswanson-me/news-aggregator" target="_blank">Click here to see the GitHub repo!</a><br></p>
+                <label>Search:
+                    <input autofocus class="search-field" type="text" placeholder="person, place, event, topic...">
+                </label>
+                <button type="submit">Go!</button>
+            </fieldset>
         </form>
         <p id="search-results"></p>
     </header>
