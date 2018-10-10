@@ -12,6 +12,16 @@ Live site available at http://news.mswanson.me/
 * Type a topic of interest into the text field and hit Enter to **search** for related news
 * Click on one of the articles to **open** that article in a new window
 
+## Screenshots
+
+Landing Page:
+
+![search page](img/news-landing.png)
+
+Results:
+
+![results page](img/news-results.png)
+
 ## Caveats
 
 * Spelling counts! This search does not do fuzzy string matching, so watch for typos.
